@@ -1,3 +1,5 @@
+// Program to delete a node from a given linkedlist at a given index
+
 #include<iostream>
 using namespace std;
 

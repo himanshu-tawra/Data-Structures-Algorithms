@@ -1,7 +1,7 @@
+// Program to display a linked list
+
 #include<iostream>
 using namespace std;
-
-
 
 struct Node
 {

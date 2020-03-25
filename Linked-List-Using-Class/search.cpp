@@ -72,7 +72,7 @@ int main()
     Node *ans = searchInLinkedList(head,8);
     if(ans != NULL)
     {
-        cout<<"Node found"<<endl;
+        cout<<"Node found : "<<ans->data<<endl;
     }
     else
     {

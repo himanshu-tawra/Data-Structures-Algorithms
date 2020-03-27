@@ -1,4 +1,4 @@
-// stack
+// stack functions
 
 #include<iostream>
 #include<stack>

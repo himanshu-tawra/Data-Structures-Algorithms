@@ -39,8 +39,6 @@ Linkedlist<T> :: Linkedlist()
     head = NULL;
 }
 
-// Function to insert the node at the begining of the linkedlist
-
 
 // Function to insert the node in a linkedlist from the end.
 
@@ -84,7 +82,6 @@ void Linkedlist<T> :: displayLinkedlist()
     cout<<"NULL"<<endl;
 }
 
-// Function to find the length of the linkedlist
 
 
 template<class T>

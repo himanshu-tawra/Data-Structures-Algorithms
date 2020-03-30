@@ -46,10 +46,21 @@ void displayLinkedlist(Node* head)
     cout<<"NULL"<<endl;
 }
 
+int countNodes(Node* n)
+{
+    int result = 1;
+    Node* temp = n;
+    while(temp->next != n)
+    {
+        result++;
+        temp = temp->next;
+    }
+    return result;
+}
 
 //This function uses two pointer- one is slow and the other is fast.
 
-void detectLoop(Node* head)
+int detectLoop(Node* head)
 {
     Node* slow = head;
     Node* fast = head;
@@ -60,12 +71,10 @@ void detectLoop(Node* head)
         fast = fast->next->next;
         if(slow == fast)
         {
-            cout<<"Loop Detected"<<endl;
-            return;
+            return countNodes(slow);
         }
     }
-    cout<<"There is no loop"<<endl;
-    
+    return 0;
 }
 
 
@@ -80,11 +89,14 @@ int main()
     insertionAtFront(head,1);
     insertionAtFront(head,1);
 
-    head->next->next->next->next = head->next->next;
+    head->next->next->next->next->next->next = head->next;
 
-   
+    int loopLength = detectLoop(head);
 
-    detectLoop(head);
+    
+    cout<<loopLength<<endl;
+        
+    
    
     
     return 0;

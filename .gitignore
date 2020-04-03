@@ -1,3 +1,4 @@
-
-*.txt
-*.o
+#ignore all kind of files
+*.*
+#except php files
+!*.cpp

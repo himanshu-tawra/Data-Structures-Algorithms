@@ -1,5 +1,5 @@
 /*
-Program to search a node in the binary tree .
+Program to print the given tree level order.
 
 
                         8
@@ -12,11 +12,16 @@ Program to search a node in the binary tree .
 
 ->input : 8 3 1 -1 -1 6 4 -1 -1 7 -1 -1 10 -1 14 13 -1 -1 -1
 
-->Preorder : 8 3 1 6 4 7 10 14 13 
+->output : 8 
+           3 10 
+           1 6 14 
+           4 7 13 
 
 */
 
 #include<iostream>
+#include<queue>
+
 using namespace std;
 
 class Node
@@ -31,9 +36,6 @@ class Node
             left = NULL;
             right = NULL;
         }
-
-
-
 };
 
 
@@ -54,35 +56,40 @@ Node* createBinaryTree()
     return root;
 }
 
-void preOrder(Node* root)
+
+void levelOrder(Node* root)
 {
-    if(root == NULL)
-    {
-        return;
-    }
-    cout<<root->data<<" ";
-    preOrder(root->left);
-    preOrder(root->right);
-}
+    queue <Node*> q;
 
-Node* searchNode(Node* root,int key)
-{
-    if(root == NULL)
-    {
-        return NULL;
-    }
-    if(root->data == key)
-    {
-        return root;
-    }
+    q.push(root);
+    q.push(NULL);
 
-    Node* ans = searchNode(root->left,key);
-    if(ans != NULL)
+    while(!q.empty())
     {
-        return ans;
+        Node* ans = q.front();
+        q.pop();
+        if(ans == NULL)
+        {
+            cout<<endl;
+            if(!q.empty())
+            {
+                q.push(NULL);
+            }
+        }
+        else
+        {
+            cout<<ans->data<<" ";
+            if(ans->left)
+            {
+                q.push(ans->left);
+            }
+            if(ans->right)
+            {
+                q.push(ans->right);
+            }
+        }
+        
     }
-
-    return searchNode(root->right,key);
 }
 
 int main()
@@ -91,23 +98,8 @@ int main()
     
     root = createBinaryTree();
 
-    cout<<"Pre order: "<<endl;
+    levelOrder(root);
 
-    preOrder(root);
-
-    cout<<endl;
-
-    Node* result = searchNode(root,0);
-
-    if(result!= NULL)
-    {
-        cout<<"Node found : "<<result->data<<endl;
-    }
-    else
-    {
-        cout<<"Not found "<<endl;
-    }
-    
     return 0;
-
+    
 }

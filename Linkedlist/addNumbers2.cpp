@@ -1,5 +1,8 @@
-// Program to add two numbers represented by linkedlist using stack
+/* Program to add two numbers represented by linkedlist using stack
+  Written by - Himanshu Tawra
+  Date - 7/April/2020 
 
+*/
 #include<iostream>
 #include<stack>
 using namespace std;

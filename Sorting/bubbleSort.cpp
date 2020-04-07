@@ -1,8 +1,8 @@
 /* 
 Sort the given array using bubble sort.
-Time complexity: Best case = O(n) and Worst case = O(n^2)
-Written by : Himanshu Tawra
-Date : 07/April/2020
+Time Complexity : O(n^2)
+Written by      : Himanshu Tawra
+Date            : 07/April/2020
 */
 
 #include<iostream>
@@ -24,7 +24,7 @@ void bubbleSort(int *arr,int arrSize){
     }
 }
 
-void printArray(int *arr,int arrSize){
+void printArray(int arr[],int arrSize){
     for(int i = 0; i < arrSize; i++){
         cout<<arr[i]<<" ";
     }

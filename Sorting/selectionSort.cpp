@@ -1,51 +1,44 @@
-// Seection sort 
-
+/* 
+Sort the given array using Selection sort.
+Time Complexity : O(n^2)
+Written by      : Himanshu Tawra
+Date            : 07/April/2020
+*/
 
 #include<iostream>
 using namespace std;
-
-
-void swap(int *x,int *y)
-{
-    int temp = *x;
-    *x = *y;
-    *y = temp;
+void selectionSort(int *arr,int arrSize){
+    int k;
+    for(int i = 0; i < arrSize -1; i++){
+        for(int j = k = i; j < arrSize; j++){
+            if(arr[j] < arr[k]){
+                k = j;
+            }
+            swap(arr[i],arr[k]);
+        }
+    }
 }
 
-
-int main()
-{
-    int arr[] = {2,8,12,17,5,9,1};
-    int length = sizeof(arr)/sizeof(arr[0]);
-
-    cout<<"Before Sorting"<<endl;
-    for(int i = 0; i < length;i++)
-    {
+void printArray(int arr[],int arrSize){
+    for(int i = 0; i < arrSize; i++){
         cout<<arr[i]<<" ";
     }
-
     cout<<endl;
+}
 
-    for(int i = 0; i < length-1; i++ )
-    {
-        int min = i;
-        for(int j = i+1; j < length; j++)
-        {
-            if(arr[j] < arr[min])
-            {
-                min = j;
-            }
-        }
+int main(){
 
-        swap(&arr[i],&arr[min]);
-    }
+    int arr[] = {9,12,47,6,5,29,35,14,21};
+    
+    int arrSize = sizeof(arr)/sizeof(arr[0]);
 
+    cout<<"Array before sorting"<<endl;
+    printArray(arr,arrSize);
 
-    cout<<"After Sorting"<<endl;
-    for(int i = 0; i < length;i++)
-    {
-        cout<<arr[i]<<" ";
-    }
+    selectionSort(arr,arrSize);
+
+    cout<<"Array after sorting"<<endl;
+    printArray(arr,arrSize);    
 
     return 0;
 }

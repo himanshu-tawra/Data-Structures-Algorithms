@@ -1,45 +1,49 @@
-// Program for bubble sort
+/* 
+Sort the given array using bubble sort.
+Time complexity: Best case = O(n) and Worst case = O(n^2)
+Written by : Himanshu Tawra
+Date : 07/April/2020
+*/
 
 #include<iostream>
 using namespace std;
 
-int main()
-{
-    int arr[] = { 8,5,12,21,14,77,5};
-    int length = sizeof(arr)/sizeof(arr[0]);
-
-    cout<<"Before swapping"<<endl;
-
-    for(int i = 0; i < length; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-
-    cout<<endl;
-
-    for(int i = 0; i < length - 1; i++)
-    {
-        for(int j = 0; j < length - 1 - i; j++)
-        {
-            if(arr[j+1] < arr[j])
-            {
-                int temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
+void bubbleSort(int *arr,int arrSize){
+    bool flag;
+    for(int i = 0; i < arrSize-1; i++){
+        flag = false;
+        for(int j = 0; j < arrSize - i - 1; j++){
+            if(arr[j] > arr[j+1]){
+                swap(arr[j],arr[j+1]);
+                flag = true;
             }
         }
+        if(flag == false){
+            break;
+        }
     }
+}
 
-
-    cout<<"After swapping"<<endl;
-
-    for(int i = 0; i < length; i++)
-    {
+void printArray(int *arr,int arrSize){
+    for(int i = 0; i < arrSize; i++){
         cout<<arr[i]<<" ";
     }
+    cout<<endl;
+}
 
+int main(){
 
+    int arr[] = {9,12,47,6,5,29,35,14,21};
+    
+    int arrSize = sizeof(arr)/sizeof(arr[0]);
+
+    cout<<"Array before sorting"<<endl;
+    printArray(arr,arrSize);
+
+    bubbleSort(arr,arrSize);
+
+    cout<<"Array after sorting"<<endl;
+    printArray(arr,arrSize);    
 
     return 0;
-
 }

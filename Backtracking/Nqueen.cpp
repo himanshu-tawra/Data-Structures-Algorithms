@@ -12,7 +12,7 @@ bool KyaPlaceKarSakteHai(int board[][10],int i,int j,int n)
             return false;
         }
     }
-    // check for the upper right diagnol
+    // check for the upper right diagonal
     int row = i;
     int col = j;
 
@@ -26,7 +26,7 @@ bool KyaPlaceKarSakteHai(int board[][10],int i,int j,int n)
         j++;
     }
 
-    //check for the upper left diagnol
+    //check for the upper left diagonal
     i = row;
     j = col;
 
@@ -50,7 +50,7 @@ bool NQueen(int board[][10],int i, int n)
     // base case 
     if(i == n)
     {
-        // prin the board
+        // print the board
 
         for(int i = 0 ; i < n; i++)
         {
@@ -75,6 +75,7 @@ bool NQueen(int board[][10],int i, int n)
 
 
     // recursive case
+    
     for(int j = 0; j < n; j++)
     {
         if(KyaPlaceKarSakteHai(board,i,j,n) == true)

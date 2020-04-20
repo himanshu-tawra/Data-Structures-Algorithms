@@ -12,6 +12,7 @@ class Node{
         }
 };
 
+// Recursive function to print preorder
 
 void preorderRecursive(Node* root){
     if(root == NULL){

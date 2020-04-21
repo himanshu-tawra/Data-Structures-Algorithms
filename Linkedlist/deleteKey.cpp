@@ -37,6 +37,8 @@ void insertionFromBack(Node* &head , int element)
 
 }
 
+// function to delete key
+
 void deleteKey(Node* &head,int key)
 { 
     Node *temp = head, *previous;
@@ -63,6 +65,8 @@ void deleteKey(Node* &head,int key)
     delete temp;
 }
 
+// function to disply linkedlist
+
 void display(Node *head)
 {
     while(head)
@@ -74,7 +78,7 @@ void display(Node *head)
     cout<<"NULL"<<endl;
 }
 
-
+// main function
 int main()
 {
 

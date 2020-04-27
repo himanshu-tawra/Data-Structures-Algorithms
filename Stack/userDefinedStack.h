@@ -1,3 +1,5 @@
+// stack implementation using linkedlist
+
 #include<iostream>
 #include "Node.h"
 using namespace std;

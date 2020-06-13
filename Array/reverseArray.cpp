@@ -7,7 +7,7 @@ void swap(int *x,int *y){
     *y = temp;
 }
 
-int reverseArray(int * arr,int len){
+void reverseArray(int * arr,int len){
     int i = 0;
     int j = len - 1;
 
@@ -16,7 +16,6 @@ int reverseArray(int * arr,int len){
         i++;
         j--;
     }
-
 }
 
 void printArray(int *arr,int len){

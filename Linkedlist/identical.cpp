@@ -35,6 +35,19 @@ bool areIdentical(Node* a,Node* b){
     return false;
 }
 
+bool areIdenticalIter(Node* a ,Node* b){
+    while(a != NULL && b != NULL){
+        if(a->data != b->data){
+            return false;
+        }
+        else{
+            a = a->next;
+            b = b->next;
+        }
+    }
+    return (a == NULL && b == NULL);
+}
+
 int main(){
 
     Node* a = NULL;
@@ -66,7 +79,8 @@ int main(){
         }
     }
     
-    bool result = areIdentical(a,b);
+    //bool result = areIdentical(a,b);
+    bool result = areIdenticalIter(a,b);
 
     if(result){
         cout<<"Linked lists are identical"<<endl;

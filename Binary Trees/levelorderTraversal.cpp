@@ -1,8 +1,4 @@
-// levelorderTraversal.cpp
-// postOrderIterative.cpp
-//inorderIterative
-//InorderRecursive
-//Preorder Traversal
+// levelorderTraversal
 #include<iostream>
 #include<queue>
 using namespace std;

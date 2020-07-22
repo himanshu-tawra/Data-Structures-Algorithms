@@ -1,7 +1,5 @@
 //InorderRecursive
-//Preorder Traversal
 #include<iostream>
-#include<stack>
 using namespace std;
 
 class Node{

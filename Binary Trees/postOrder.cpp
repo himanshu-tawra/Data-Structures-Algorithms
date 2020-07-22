@@ -1,7 +1,4 @@
-// postOrder.cpp
-//inorderIterative
-//InorderRecursive
-//Preorder Traversal
+// postOrder
 #include<iostream>
 #include<stack>
 using namespace std;

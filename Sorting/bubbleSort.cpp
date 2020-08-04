@@ -8,15 +8,16 @@ Date            : 07/April/2020
 #include<iostream>
 using namespace std;
 
-void bubbleSort(int *arr,int arrSize){
+void bubbleSort(int *arr,int len){
     bool flag;
-    for(int i = 0; i < arrSize-1; i++){
+    for(int i = 0; i < len - 1; i++){
         flag = false;
-        for(int j = 0; j < arrSize - i - 1; j++){
-            if(arr[j] > arr[j+1]){
+        for (int j = 0; j < len - 1 - i; j++){
+            if(arr[j] > arr[j + 1]){
                 swap(arr[j],arr[j+1]);
                 flag = true;
             }
+
         }
         if(flag == false){
             break;

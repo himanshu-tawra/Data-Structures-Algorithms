@@ -10,18 +10,21 @@ Sort the array using insertion sort.
 #include<iostream>
 using namespace std;
 
-void insertionSort(int *arr,int arrSize){
-	int j;
-	for(int i = 1; i < arrSize; i++){
-		j = i-1;
+void insertionSort(int *arr,int len){
+
+	for(int i = 1; i < len; i++){
+		int j = i - 1;
 		int x = arr[i];
-		while(j > -1 && arr[j] > x){
+		while(j >=0 && arr[j] > arr[j+1]){
 			arr[j+1] = arr[j];
 			j--;
 		}
 		arr[j+1] = x;
+
 	}
+
 }
+
 
 void printArray(int arr[],int arrSize){
     for(int i = 0; i < arrSize; i++){

@@ -7,17 +7,20 @@ Date            : 07/April/2020
 
 #include<iostream>
 using namespace std;
-void selectionSort(int *arr,int arrSize){
-    int k;
-    for(int i = 0; i < arrSize -1; i++){
-        for(int j = k = i; j < arrSize; j++){
+
+
+void selectionSort(int *arr,int len){
+    int i,j,k;
+    for(int i = 0; i < len - 1; i++){
+        for(j = k = i; j < len; j++){
             if(arr[j] < arr[k]){
                 k = j;
             }
-            swap(arr[i],arr[k]);
         }
+        swap(arr[i],arr[k]);
     }
 }
+
 
 void printArray(int arr[],int arrSize){
     for(int i = 0; i < arrSize; i++){

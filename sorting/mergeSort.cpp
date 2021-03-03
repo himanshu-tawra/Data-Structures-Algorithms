@@ -1,3 +1,7 @@
+/*
+    Merge sort algorithm
+*/
+
 #include<iostream>
 using namespace std;
 
